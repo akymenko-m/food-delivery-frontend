@@ -45,10 +45,9 @@ export function FormOrder({ setModalShow }) {
   const findDuplicate = () => {
     for (let i = 0; i < order.length; i++) {
       for (let j = i + 1; j < order.length; j++) {
-        if (order[i]['owner'] === order[j]['owner']) {
-          return false;
+        if (order[i]['owner'] !== order[j]['owner']) {
+          return true;
         }
-        return true;
       }
     }
   };

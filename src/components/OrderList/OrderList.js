@@ -1,13 +1,16 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { getOrder } from 'redux/selectors';
+import { getOrder, getIsloading } from 'redux/selectors';
 import { addToCart, deleteItem } from 'redux/deliverySlice';
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from 'components/Loader/Loader';
+
 import './OrderList.css';
 
 export function OrderList() {
   const order = useSelector(getOrder);
+  const isLoading = useSelector(getIsloading);
   const dispatch = useDispatch();
 
   function deleteItemFromOrder(el) {
@@ -16,6 +19,7 @@ export function OrderList() {
 
   return (
     <div className="order-list">
+      {isLoading && <Loader />}
       {order.map(el => {
         return (
           <Card className="order-card" key={el._id}>
