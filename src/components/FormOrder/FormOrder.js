@@ -6,6 +6,7 @@ import { getOrder, getIsloading } from 'redux/selectors';
 import { sendOrder } from 'redux/operations';
 import Toast from 'react-bootstrap/Toast';
 import Loader from 'components/Loader/Loader';
+import './FormOrder.css';
 
 export function FormOrder({ setModalShow }) {
   const [show, setShow] = useState(false);
@@ -83,7 +84,7 @@ export function FormOrder({ setModalShow }) {
   return (
     <>
       {isLoading && <Loader />}
-      <Form onSubmit={handleSubmit}>
+      <Form className="order-form" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Ім'я</Form.Label>
           <Form.Control

@@ -1,11 +1,41 @@
 .shopList {
+    width: 100%;
+    /* width: 300px; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+
     gap: 10px;
+    justify-content: space-evenly;
     border-radius: 10px;
     border: 1px solid #adb5bd;
     padding: 10px;
+    margin-bottom: 0;
     /* max-height: 600px;
     overflow-y: auto; */
 
+}
+
+@media screen and (min-width: 768px) {
+    /* .shopList {
+        width: 320px;
+
+    } */
+}
+
+@media screen and (min-width: 850px) {
+
+
+    .shopList {
+        width: 300px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+
+    /* .container {
+        max-width: 940px;
+    } */
 }

@@ -18,29 +18,11 @@ const deliverySlice = createSlice({
       state.currentShop = action.payload;
     },
     addToCart(state, action) {
-      // state.order = [...state.order, action.payload];
       state.order = state.order.find(el => el._id === action.payload._id)
         ? state.order.map(i =>
             i._id === action.payload._id ? action.payload : i
           )
         : [...state.order, action.payload];
-
-      // state.order = state.order.length
-      //     ? state.order.map((el) =>
-      //           el.id === action.payload.id ? action.payload : el
-      //       )
-      //     : [...state.order, action.payload];
-
-      // state.order = state.order.length
-      //     ? state.order.forEach((el) =>
-      //           el._id === action.payload._id
-      //               ? {
-      //                     ...action.payload,
-      //                     quantity: action.payload.quantity + el.quantity,
-      //                 }
-      //               : [...state.order, action.payload]
-      //       )
-      //     : [...state.order, action.payload];
     },
     deleteItem(state, action) {
       state.order = state.order.filter(item => item._id !== action.payload._id);

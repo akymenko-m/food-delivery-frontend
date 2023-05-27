@@ -11,7 +11,9 @@ function ColorSchemesExample() {
   return (
     <>
       <Navbar bg="light" variant="light">
-        <Container>
+        <Container
+          style={{ justifyContent: 'flex-start', alignItems: 'flex-start' }}
+        >
           <Navbar.Brand href="/">DELIVERY</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Головна</Nav.Link>

@@ -1,0 +1,27 @@
+.cart-container {
+    padding: 8px;
+    margin: 0 auto;
+    max-width: 950px;
+
+}
+
+@media screen and (min-width: 600px) {
+    .cart-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .order-block {
+        width: calc((100% - 10px)/2);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .cart-container {
+        padding: 24px;
+
+    }
+}

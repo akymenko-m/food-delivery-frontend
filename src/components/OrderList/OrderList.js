@@ -4,6 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { getOrder } from 'redux/selectors';
 import { addToCart, deleteItem } from 'redux/deliverySlice';
 import { useDispatch, useSelector } from 'react-redux';
+import './OrderList.css';
 
 export function OrderList() {
   const order = useSelector(getOrder);
@@ -14,16 +15,16 @@ export function OrderList() {
   }
 
   return (
-    <>
+    <div className="order-list">
       {order.map(el => {
         return (
-          <Card key={el._id}>
-            <Card.Img variant="top" src={el.image} style={{ width: '150px' }} />
+          <Card className="order-card" key={el._id}>
+            <Card.Img className="image-order" variant="top" src={el.image} />
             <Card.Body>
               <Card.Text>{el.name}</Card.Text>
               <Card.Text>Ціна: {el.price * el.quantity} UAH</Card.Text>
 
-              <div>
+              <div className="quantity">
                 <p>
                   <b>Кількість</b>
                 </p>
@@ -67,6 +68,6 @@ export function OrderList() {
           </Card>
         );
       })}
-    </>
+    </div>
   );
 }

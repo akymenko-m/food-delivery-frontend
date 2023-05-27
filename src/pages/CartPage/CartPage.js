@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { getOrder, getIsloading } from 'redux/selectors';
 import Alert from 'react-bootstrap/Alert';
 import Modal from 'react-bootstrap/Modal';
+import './CartPage.css';
 
 const CartPage = () => {
   const isLoading = useSelector(getIsloading);
@@ -21,14 +22,17 @@ const CartPage = () => {
       <div>
         {isLoading && <Loader />}
 
-        <div className="container">
-          <FormOrder setModalShow={setModalShow} />
+        <div className="cart-container">
+          <div className="order-block">
+            <Alert variant="primary">
+              <b>Загальна сумма:</b> {total} UAH
+            </Alert>
+
+            <FormOrder setModalShow={setModalShow} />
+          </div>
 
           <OrderList order={order} />
         </div>
-        <Alert variant="primary">
-          <b>Загальна сумма:</b> {total} UAH
-        </Alert>
       </div>
 
       {modalShow && (

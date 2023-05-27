@@ -7,7 +7,7 @@ export const ProductList = ({ products }) => {
     <div>
       {products.length < 1 ? (
         <div className="productContainer">
-          <p style={{ textAlign: 'center' }}>Choose the shop..</p>
+          <p style={{ textAlign: 'center' }}>Вибери магазин..</p>
           <Image
             src="https://res.cloudinary.com/dxgfojstk/image/upload/c_scale,q_98,w_1000/v1685011103/Food/shoose-shop_pwxjy9.avif"
             fluid

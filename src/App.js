@@ -2,8 +2,6 @@ import React, { lazy, Suspense } from 'react';
 import 'App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
-// import HomePage from "./pages/HomePage/HomePage";
-// import CartPage from "./pages/CartPage/CartPage";
 
 const LazyHeader = lazy(() => import('components/Header/Header'));
 const LazyHome = lazy(() => import('pages/HomePage/HomePage'));

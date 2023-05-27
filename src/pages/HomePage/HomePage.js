@@ -39,8 +39,8 @@ const HomePage = () => {
     <div>
       {isLoading && <Loader />}
 
-      <h1 style={{ opacity: '0' }}>Delivery food</h1>
-      <div className="container">
+      <h1 className="visually-hidden">Delivery food</h1>
+      <div className="home-container">
         <ShopList shops={shops} showProducts={showProducts} />
 
         {isLoading ? <Loader /> : <ProductList products={filteredProducts} />}

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from 'redux/deliverySlice';
 import { getOrder } from 'redux/selectors';
 import Alert from 'react-bootstrap/Alert';
+import './ProductCard.css';
 
 export function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(0);
@@ -60,22 +61,19 @@ export function ProductCard({ product }) {
   }
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={product.image} />
+    <Card className="product-card">
+      <Card.Img className="image-product" variant="top" src={product.image} />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
+        <Card.Text className="description">{product.description}</Card.Text>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Card.Text>
-          <b>Ціна:</b>
+          <b>Ціна:</b>{' '}
           <span>
             {!quantity ? product.price : quantity * product.price} UAH
           </span>
         </Card.Text>
-        <div>
-          <p>
+        <div className="quantity">
+          <p style={{ marginBottom: '0' }}>
             <b>Кількість</b>
           </p>
           <ButtonGroup className="me-2" aria-label="Second group">
@@ -86,7 +84,9 @@ export function ProductCard({ product }) {
         </div>
 
         {order.find(el => el._id === product._id) ? (
-          <Alert variant="success">Вже в корзині</Alert>
+          <Alert className="product-alert" variant="success">
+            Вже в корзині
+          </Alert>
         ) : null}
 
         <Button variant="primary" onClick={addItemToCard}>

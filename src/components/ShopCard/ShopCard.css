@@ -1,0 +1,48 @@
+.shop-card {
+    width: 130px;
+}
+
+.shop-name {
+    font-size: 18px;
+}
+
+.image-shop-container {
+    height: 120px;
+    overflow: hidden
+}
+
+@media screen and (min-width: 440px) {
+    .shop-card {
+        width: 180px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .image-shop-container {
+        height: 150px;
+
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .shop-card {
+        width: 240px;
+    }
+
+    .image-shop-container {
+        height: 180px;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .shop-name {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    /* .container {
+        max-width: 940px;
+    } */
+}
